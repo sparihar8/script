@@ -1,6 +1,6 @@
 1. 
 
-curl -d '{"auth":{"passwordCredentials":{"username": "osadmin","password": "snapdeal@1234"},"tenantName": "admin"}}' -H "Content-Type: application/json" http://10.42.206.193:5000/v2.0/tokens | python -m json.tool
+curl -d '{"auth":{"passwordCredentials":{"username": "<user>","password": "<pwd>"},"tenantName": "admin"}}' -H "Content-Type: application/json" http://10.42.206.193:5000/v2.0/tokens | python -m json.tool
 
 
 Ouptut -
