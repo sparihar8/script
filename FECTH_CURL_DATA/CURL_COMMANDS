@@ -1,0 +1,146 @@
+1. 
+
+curl -d '{"auth":{"passwordCredentials":{"username": "osadmin","password": "snapdeal@1234"},"tenantName": "admin"}}' -H "Content-Type: application/json" http://10.42.206.193:5000/v2.0/tokens | python -m json.tool
+
+
+Ouptut -
+{
+    "access": {
+        "metadata": {
+            "is_admin": 0,
+            "roles": [
+                "2782322b74a442a3a9d778a966caa3f7"
+            ]
+        },
+        "serviceCatalog": [
+            {
+                "endpoints": [
+                    {
+                        "adminURL": "http://controller:8774/v2/101fbf1c9412423e8560dcb71a9b15aa",
+                        "id": "0abad89d47f34c59b567dcfe57531f30",
+                        "internalURL": "http://controller:8774/v2/101fbf1c9412423e8560dcb71a9b15aa",
+                        "publicURL": "http://controller:8774/v2/101fbf1c9412423e8560dcb71a9b15aa",
+                        "region": "RegionOne"
+                    }
+                ],
+                "endpoints_links": [],
+                "name": "nova",
+                "type": "compute"
+            },
+            {
+                "endpoints": [
+                    {
+                        "adminURL": "http://controller:9696",
+                        "id": "1d0b056620f745eda0d8c77aa5b26383",
+                        "internalURL": "http://controller:9696",
+                        "publicURL": "http://controller:9696",
+                        "region": "RegionOne"
+                    }
+                ],
+                "endpoints_links": [],
+                "name": "neutron",
+                "type": "network"
+            },
+            {
+                "endpoints": [
+                    {
+                        "adminURL": "http://controller:8776/v2/101fbf1c9412423e8560dcb71a9b15aa",
+                        "id": "56bf4871ef4c43588cf70d937448a6f2",
+                        "internalURL": "http://controller:8776/v2/101fbf1c9412423e8560dcb71a9b15aa",
+                        "publicURL": "http://controller:8776/v2/101fbf1c9412423e8560dcb71a9b15aa",
+                        "region": "RegionOne"
+                    }
+                ],
+                "endpoints_links": [],
+                "name": "cinderv2",
+                "type": "volumev2"
+            },
+            {
+                "endpoints": [
+                    {
+                        "adminURL": "http://controller:9292",
+                        "id": "3f5827625eae4fa7b658404a0c322108",
+                        "internalURL": "http://controller:9292",
+                        "publicURL": "http://controller:9292",
+                        "region": "RegionOne"
+                    }
+                ],
+                "endpoints_links": [],
+                "name": "glance",
+                "type": "image"
+            },
+            {
+                "endpoints": [
+                    {
+                        "adminURL": "http://controller:8776/v2/101fbf1c9412423e8560dcb71a9b15aa",
+                        "id": "0317293e77444bff9df7d0a851aada45",
+                        "internalURL": "http://controller:8776/v2/101fbf1c9412423e8560dcb71a9b15aa",
+                        "publicURL": "http://controller:8776/v2/101fbf1c9412423e8560dcb71a9b15aa",
+                        "region": "RegionOne"
+                    }
+                ],
+                "endpoints_links": [],
+                "name": "cinder",
+                "type": "volume"
+            },
+            {
+                "endpoints": [
+                    {
+                        "adminURL": "http://controller:35357/v2.0",
+                        "id": "86788efa2f084614920fa4ee490ec16e",
+                        "internalURL": "http://controller:5000/v2.0",
+                        "publicURL": "http://controller:5000/v2.0",
+                        "region": "RegionOne"
+                    }
+                ],
+                "endpoints_links": [],
+                "name": "keystone",
+                "type": "identity"
+            }
+        ],
+        "token": {
+            "audit_ids": [
+                "zc2MMqCgQJmQ4dPBYxndMg"
+            ],
+            "expires": "2016-09-19T12:35:50Z",
+            "id": "MIIKpgYJKoZIhvcNAQcCoIIKlzCCCpMCAQExDTALBglghkgBZQMEAgEwggj0BgkqhkiG9w0BBwGgggjlBIII4XsiYWNjZXNzIjp7InRva2VuIjp7Imlzc3VlZF9hdCI6IjIwMTYtMDktMTlUMTE6MzU6NTAuNDE5NDg3IiwiZXhwaXJlcyI6IjIwMTYtMDktMTlUMTI6MzU6NTBaIiwiaWQiOiJwbGFjZWhvbGRlciIsInRlbmFudCI6eyJkZXNjcmlwdGlvbiI6IkFkbWluIFByb2plY3QiLCJlbmFibGVkIjp0cnVlLCJpZCI6IjEwMWZiZjFjOTQxMjQyM2U4NTYwZGNiNzFhOWIxNWFhIiwibmFtZSI6ImFkbWluIn0sImF1ZGl0X2lkcyI6WyJ6YzJNTXFDZ1FKbVE0ZFBCWXhuZE1nIl19LCJzZXJ2aWNlQ2F0YWxvZyI6W3siZW5kcG9pbnRzIjpbeyJhZG1pblVSTCI6Imh0dHA6Ly9jb250cm9sbGVyOjg3NzQvdjIvMTAxZmJmMWM5NDEyNDIzZTg1NjBkY2I3MWE5YjE1YWEiLCJyZWdpb24iOiJSZWdpb25PbmUiLCJpbnRlcm5hbFVSTCI6Imh0dHA6Ly9jb250cm9sbGVyOjg3NzQvdjIvMTAxZmJmMWM5NDEyNDIzZTg1NjBkY2I3MWE5YjE1YWEiLCJpZCI6IjBhYmFkODlkNDdmMzRjNTliNTY3ZGNmZTU3NTMxZjMwIiwicHVibGljVVJMIjoiaHR0cDovL2NvbnRyb2xsZXI6ODc3NC92Mi8xMDFmYmYxYzk0MTI0MjNlODU2MGRjYjcxYTliMTVhYSJ9XSwiZW5kcG9pbnRzX2xpbmtzIjpbXSwidHlwZSI6ImNvbXB1dGUiLCJuYW1lIjoibm92YSJ9LHsiZW5kcG9pbnRzIjpbeyJhZG1pblVSTCI6Imh0dHA6Ly9jb250cm9sbGVyOjk2OTYiLCJyZWdpb24iOiJSZWdpb25PbmUiLCJpbnRlcm5hbFVSTCI6Imh0dHA6Ly9jb250cm9sbGVyOjk2OTYiLCJpZCI6IjFkMGIwNTY2MjBmNzQ1ZWRhMGQ4Yzc3YWE1YjI2MzgzIiwicHVibGljVVJMIjoiaHR0cDovL2NvbnRyb2xsZXI6OTY5NiJ9XSwiZW5kcG9pbnRzX2xpbmtzIjpbXSwidHlwZSI6Im5ldHdvcmsiLCJuYW1lIjoibmV1dHJvbiJ9LHsiZW5kcG9pbnRzIjpbeyJhZG1pblVSTCI6Imh0dHA6Ly9jb250cm9sbGVyOjg3NzYvdjIvMTAxZmJmMWM5NDEyNDIzZTg1NjBkY2I3MWE5YjE1YWEiLCJyZWdpb24iOiJSZWdpb25PbmUiLCJpbnRlcm5hbFVSTCI6Imh0dHA6Ly9jb250cm9sbGVyOjg3NzYvdjIvMTAxZmJmMWM5NDEyNDIzZTg1NjBkY2I3MWE5YjE1YWEiLCJpZCI6IjU2YmY0ODcxZWY0YzQzNTg4Y2Y3MGQ5Mzc0NDhhNmYyIiwicHVibGljVVJMIjoiaHR0cDovL2NvbnRyb2xsZXI6ODc3Ni92Mi8xMDFmYmYxYzk0MTI0MjNlODU2MGRjYjcxYTliMTVhYSJ9XSwiZW5kcG9pbnRzX2xpbmtzIjpbXSwidHlwZSI6InZvbHVtZXYyIiwibmFtZSI6ImNpbmRlcnYyIn0seyJlbmRwb2ludHMiOlt7ImFkbWluVVJMIjoiaHR0cDovL2NvbnRyb2xsZXI6OTI5MiIsInJlZ2lvbiI6IlJlZ2lvbk9uZSIsImludGVybmFsVVJMIjoiaHR0cDovL2NvbnRyb2xsZXI6OTI5MiIsImlkIjoiM2Y1ODI3NjI1ZWFlNGZhN2I2NTg0MDRhMGMzMjIxMDgiLCJwdWJsaWNVUkwiOiJodHRwOi8vY29udHJvbGxlcjo5MjkyIn1dLCJlbmRwb2ludHNfbGlua3MiOltdLCJ0eXBlIjoiaW1hZ2UiLCJuYW1lIjoiZ2xhbmNlIn0seyJlbmRwb2ludHMiOlt7ImFkbWluVVJMIjoiaHR0cDovL2NvbnRyb2xsZXI6ODc3Ni92Mi8xMDFmYmYxYzk0MTI0MjNlODU2MGRjYjcxYTliMTVhYSIsInJlZ2lvbiI6IlJlZ2lvbk9uZSIsImludGVybmFsVVJMIjoiaHR0cDovL2NvbnRyb2xsZXI6ODc3Ni92Mi8xMDFmYmYxYzk0MTI0MjNlODU2MGRjYjcxYTliMTVhYSIsImlkIjoiMDMxNzI5M2U3NzQ0NGJmZjlkZjdkMGE4NTFhYWRhNDUiLCJwdWJsaWNVUkwiOiJodHRwOi8vY29udHJvbGxlcjo4Nzc2L3YyLzEwMWZiZjFjOTQxMjQyM2U4NTYwZGNiNzFhOWIxNWFhIn1dLCJlbmRwb2ludHNfbGlua3MiOltdLCJ0eXBlIjoidm9sdW1lIiwibmFtZSI6ImNpbmRlciJ9LHsiZW5kcG9pbnRzIjpbeyJhZG1pblVSTCI6Imh0dHA6Ly9jb250cm9sbGVyOjM1MzU3L3YyLjAiLCJyZWdpb24iOiJSZWdpb25PbmUiLCJpbnRlcm5hbFVSTCI6Imh0dHA6Ly9jb250cm9sbGVyOjUwMDAvdjIuMCIsImlkIjoiODY3ODhlZmEyZjA4NDYxNDkyMGZhNGVlNDkwZWMxNmUiLCJwdWJsaWNVUkwiOiJodHRwOi8vY29udHJvbGxlcjo1MDAwL3YyLjAifV0sImVuZHBvaW50c19saW5rcyI6W10sInR5cGUiOiJpZGVudGl0eSIsIm5hbWUiOiJrZXlzdG9uZSJ9XSwidXNlciI6eyJ1c2VybmFtZSI6Im9zYWRtaW4iLCJyb2xlc19saW5rcyI6W10sImlkIjoib3NhZG1pbiIsInJvbGVzIjpbeyJuYW1lIjoiYWRtaW4ifV0sIm5hbWUiOiJvc2FkbWluIn0sIm1ldGFkYXRhIjp7ImlzX2FkbWluIjowLCJyb2xlcyI6WyIyNzgyMzIyYjc0YTQ0MmEzYTlkNzc4YTk2NmNhYTNmNyJdfX19MYIBhTCCAYECAQEwXDBXMQswCQYDVQQGEwJVUzEOMAwGA1UECAwFVW5zZXQxDjAMBgNVBAcMBVVuc2V0MQ4wDAYDVQQKDAVVbnNldDEYMBYGA1UEAwwPd3d3LmV4YW1wbGUuY29tAgECMAsGCWCGSAFlAwQCATANBgkqhkiG9w0BAQEFAASCAQAFxE+GybXhkrF+HA17Xx0ZvvWAQSS5FtCyQ+p36U7kYz5BlkIVx2hkVN8qFDZzGPR9phqFf4ElIErlFruHXWdKk2A2iFA+A5HxnfofEvKFona3modQgh2NYvQrIy6O8Dn4Hbzj-aEUuvHf7cTsWhUnqHkAiIrLIr42Gt-+VQyLrZFbOntYo7w4ZDnDvwkjOFkmmcXAABL1a1M3NYq9KHnRHwhctDjMW7nro4xeE3mfyS-L0ZlM36Puvn-efZQgsPZpPTj4bQ13XLoeIyEcNuvP-M0UoaUWD9uqjhrs4Ntti+jpnJgNCBV9jWJd1x1Mgoi0nMwP6Jykc1YMUVO6lHrJ",
+            "issued_at": "2016-09-19T11:35:50.419487",
+            "tenant": {
+                "description": "Admin Project",
+                "enabled": true,
+                "id": "101fbf1c9412423e8560dcb71a9b15aa",
+                "name": "admin"
+            }
+        },
+        "user": {
+            "id": "osadmin",
+            "name": "osadmin",
+            "roles": [
+                {
+                    "name": "admin"
+                }
+            ],
+            "roles_links": [],
+            "username": "osadmin"
+        }
+    }
+}
+
+
+
+2. 
+
+ OS_TOKEN="MIIKpgYJKoZIhvcNAQcCoIIKlzCCCpMCAQExDTALBglghkgBZQMEAgEwggj0BgkqhkiG9w0BBwGgggjlBIII4XsiYWNjZXNzIjp7InRva2VuIjp7Imlzc3VlZF9hdCI6IjIwMTYtMDktMTlUMTE6MzU6NTAuNDE5NDg3IiwiZXhwaXJlcyI6IjIwMTYtMDktMTlUMTI6MzU6NTBaIiwiaWQiOiJwbGFjZWhvbGRlciIsInRlbmFudCI6eyJkZXNjcmlwdGlvbiI6IkFkbWluIFByb2plY3QiLCJlbmFibGVkIjp0cnVlLCJpZCI6IjEwMWZiZjFjOTQxMjQyM2U4NTYwZGNiNzFhOWIxNWFhIiwibmFtZSI6ImFkbWluIn0sImF1ZGl0X2lkcyI6WyJ6YzJNTXFDZ1FKbVE0ZFBCWXhuZE1nIl19LCJzZXJ2aWNlQ2F0YWxvZyI6W3siZW5kcG9pbnRzIjpbeyJhZG1pblVSTCI6Imh0dHA6Ly9jb250cm9sbGVyOjg3NzQvdjIvMTAxZmJmMWM5NDEyNDIzZTg1NjBkY2I3MWE5YjE1YWEiLCJyZWdpb24iOiJSZWdpb25PbmUiLCJpbnRlcm5hbFVSTCI6Imh0dHA6Ly9jb250cm9sbGVyOjg3NzQvdjIvMTAxZmJmMWM5NDEyNDIzZTg1NjBkY2I3MWE5YjE1YWEiLCJpZCI6IjBhYmFkODlkNDdmMzRjNTliNTY3ZGNmZTU3NTMxZjMwIiwicHVibGljVVJMIjoiaHR0cDovL2NvbnRyb2xsZXI6ODc3NC92Mi8xMDFmYmYxYzk0MTI0MjNlODU2MGRjYjcxYTliMTVhYSJ9XSwiZW5kcG9pbnRzX2xpbmtzIjpbXSwidHlwZSI6ImNvbXB1dGUiLCJuYW1lIjoibm92YSJ9LHsiZW5kcG9pbnRzIjpbeyJhZG1pblVSTCI6Imh0dHA6Ly9jb250cm9sbGVyOjk2OTYiLCJyZWdpb24iOiJSZWdpb25PbmUiLCJpbnRlcm5hbFVSTCI6Imh0dHA6Ly9jb250cm9sbGVyOjk2OTYiLCJpZCI6IjFkMGIwNTY2MjBmNzQ1ZWRhMGQ4Yzc3YWE1YjI2MzgzIiwicHVibGljVVJMIjoiaHR0cDovL2NvbnRyb2xsZXI6OTY5NiJ9XSwiZW5kcG9pbnRzX2xpbmtzIjpbXSwidHlwZSI6Im5ldHdvcmsiLCJuYW1lIjoibmV1dHJvbiJ9LHsiZW5kcG9pbnRzIjpbeyJhZG1pblVSTCI6Imh0dHA6Ly9jb250cm9sbGVyOjg3NzYvdjIvMTAxZmJmMWM5NDEyNDIzZTg1NjBkY2I3MWE5YjE1YWEiLCJyZWdpb24iOiJSZWdpb25PbmUiLCJpbnRlcm5hbFVSTCI6Imh0dHA6Ly9jb250cm9sbGVyOjg3NzYvdjIvMTAxZmJmMWM5NDEyNDIzZTg1NjBkY2I3MWE5YjE1YWEiLCJpZCI6IjU2YmY0ODcxZWY0YzQzNTg4Y2Y3MGQ5Mzc0NDhhNmYyIiwicHVibGljVVJMIjoiaHR0cDovL2NvbnRyb2xsZXI6ODc3Ni92Mi8xMDFmYmYxYzk0MTI0MjNlODU2MGRjYjcxYTliMTVhYSJ9XSwiZW5kcG9pbnRzX2xpbmtzIjpbXSwidHlwZSI6InZvbHVtZXYyIiwibmFtZSI6ImNpbmRlcnYyIn0seyJlbmRwb2ludHMiOlt7ImFkbWluVVJMIjoiaHR0cDovL2NvbnRyb2xsZXI6OTI5MiIsInJlZ2lvbiI6IlJlZ2lvbk9uZSIsImludGVybmFsVVJMIjoiaHR0cDovL2NvbnRyb2xsZXI6OTI5MiIsImlkIjoiM2Y1ODI3NjI1ZWFlNGZhN2I2NTg0MDRhMGMzMjIxMDgiLCJwdWJsaWNVUkwiOiJodHRwOi8vY29udHJvbGxlcjo5MjkyIn1dLCJlbmRwb2ludHNfbGlua3MiOltdLCJ0eXBlIjoiaW1hZ2UiLCJuYW1lIjoiZ2xhbmNlIn0seyJlbmRwb2ludHMiOlt7ImFkbWluVVJMIjoiaHR0cDovL2NvbnRyb2xsZXI6ODc3Ni92Mi8xMDFmYmYxYzk0MTI0MjNlODU2MGRjYjcxYTliMTVhYSIsInJlZ2lvbiI6IlJlZ2lvbk9uZSIsImludGVybmFsVVJMIjoiaHR0cDovL2NvbnRyb2xsZXI6ODc3Ni92Mi8xMDFmYmYxYzk0MTI0MjNlODU2MGRjYjcxYTliMTVhYSIsImlkIjoiMDMxNzI5M2U3NzQ0NGJmZjlkZjdkMGE4NTFhYWRhNDUiLCJwdWJsaWNVUkwiOiJodHRwOi8vY29udHJvbGxlcjo4Nzc2L3YyLzEwMWZiZjFjOTQxMjQyM2U4NTYwZGNiNzFhOWIxNWFhIn1dLCJlbmRwb2ludHNfbGlua3MiOltdLCJ0eXBlIjoidm9sdW1lIiwibmFtZSI6ImNpbmRlciJ9LHsiZW5kcG9pbnRzIjpbeyJhZG1pblVSTCI6Imh0dHA6Ly9jb250cm9sbGVyOjM1MzU3L3YyLjAiLCJyZWdpb24iOiJSZWdpb25PbmUiLCJpbnRlcm5hbFVSTCI6Imh0dHA6Ly9jb250cm9sbGVyOjUwMDAvdjIuMCIsImlkIjoiODY3ODhlZmEyZjA4NDYxNDkyMGZhNGVlNDkwZWMxNmUiLCJwdWJsaWNVUkwiOiJodHRwOi8vY29udHJvbGxlcjo1MDAwL3YyLjAifV0sImVuZHBvaW50c19saW5rcyI6W10sInR5cGUiOiJpZGVudGl0eSIsIm5hbWUiOiJrZXlzdG9uZSJ9XSwidXNlciI6eyJ1c2VybmFtZSI6Im9zYWRtaW4iLCJyb2xlc19saW5rcyI6W10sImlkIjoib3NhZG1pbiIsInJvbGVzIjpbeyJuYW1lIjoiYWRtaW4ifV0sIm5hbWUiOiJvc2FkbWluIn0sIm1ldGFkYXRhIjp7ImlzX2FkbWluIjowLCJyb2xlcyI6WyIyNzgyMzIyYjc0YTQ0MmEzYTlkNzc4YTk2NmNhYTNmNyJdfX19MYIBhTCCAYECAQEwXDBXMQswCQYDVQQGEwJVUzEOMAwGA1UECAwFVW5zZXQxDjAMBgNVBAcMBVVuc2V0MQ4wDAYDVQQKDAVVbnNldDEYMBYGA1UEAwwPd3d3LmV4YW1wbGUuY29tAgECMAsGCWCGSAFlAwQCATANBgkqhkiG9w0BAQEFAASCAQAFxE+GybXhkrF+HA17Xx0ZvvWAQSS5FtCyQ+p36U7kYz5BlkIVx2hkVN8qFDZzGPR9phqFf4ElIErlFruHXWdKk2A2iFA+A5HxnfofEvKFona3modQgh2NYvQrIy6O8Dn4Hbzj-aEUuvHf7cTsWhUnqHkAiIrLIr42Gt-+VQyLrZFbOntYo7w4ZDnDvwkjOFkmmcXAABL1a1M3NYq9KHnRHwhctDjMW7nro4xeE3mfyS-L0ZlM36Puvn-efZQgsPZpPTj4bQ13XLoeIyEcNuvP-M0UoaUWD9uqjhrs4Ntti+jpnJgNCBV9jWJd1x1Mgoi0nMwP6Jykc1YMUVO6lHrJ"
+
+
+3.  ( get agent-list )
+
+curl -s -H "X-Auth-Token: $OS_TOKEN"  http://controller:9696/v2.0/agents.json | python -m json.tool
+
+curl -s -H "X-Auth-Token: $OS_TOKEN"   http://controller:9696/v2.0/networks.json | python -m json.tool
+
+curl -s -H "X-Auth-Token: $OS_TOKEN"   http://controller:8774/v2/101fbf1c9412423e8560dcb71a9b15aa/servers/detail?all_tenants=1
+
+curl -s -H "X-Auth-Token: $OS_TOKEN"   http://controller:8774/v2/101fbf1c9412423e8560dcb71a9b15aa/flavors/4744fc2e-ef1f-437a-b2cc-3f4680edfb0d/os-extra_specs | python -m json.tool
+
+
