@@ -1,0 +1,1 @@
+ansible compute -a "sed -i '/santosh_nodes/a x.x.x.x <hostname>\ny.y.y.y <hostname>' /etc/hosts"
