@@ -1,0 +1,1 @@
+sed -i '/node_start/,/node_end/{//!d}' file.txt
